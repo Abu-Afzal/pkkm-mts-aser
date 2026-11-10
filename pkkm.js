@@ -1,16 +1,16 @@
 // ══════════════════════════════════════════════
-// PKKM DIGITAL - MTsAS'ADIYAH ERENG-ERENG
+// PKKM DIGITAL - MTs AS'ADIYAH ERENG-ERENG
 // TAHUN AJARAN 2026/2027
 // ══════════════════════════════════════════════
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDuAGy8Ku7Jh0is5WanEIf-A12AsVi2Kho",
-  authDomain: "pkkm-aser-281a4.firebaseapp.com",
-  projectId: "pkkm-aser-281a4",
-  storageBucket: "pkkm-aser-281a4.firebasestorage.app",
-  messagingSenderId: "17368843878",
-  appId: "1:17368843878:web:70babcedfbb0002f170fa7",
-  measurementId: "G-0T4Z0B2MXP"
+  apiKey: "AIzaSyBfkFhrAOlnLuD-5rx8_vJ9uk8aR4z6Pfs",
+  authDomain: "pkkm-mts-aser.firebaseapp.com",
+  projectId: "pkkm-mts-aser",
+  storageBucket: "pkkm-mts-aser.firebasestorage.app",
+  messagingSenderId: "470307682877",
+  appId: "1:470307682877:web:e1547fdfa09c10e3a7c854",
+  measurementId: "G-GWV45RCX0B"
 };
 
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
@@ -723,7 +723,7 @@ window.saveAssignment = function(indikatorId, btn) {
 };
 
 window.setupDataPKKM = function() {
-    if (!checkAdminAccess() || !confirm('⚠️ PERINGATAN: Semua data lama akan DIHAPUS dan diganti dengan data sesuai SK MTsAs\'adiyah Ereng-Ereng.\n\nLanjutkan?')) return;
+    if (!checkAdminAccess() || !confirm('⚠️ PERINGATAN: Semua data lama akan DIHAPUS dan diganti dengan data sesuai SK MTs As\'adiyah Ereng-Ereng.\n\nLanjutkan?')) return;
     
     var deletePromises = [];
     deletePromises.push(db.collection('pkkm_aspek').get().then(function(snapshot) {
@@ -747,10 +747,10 @@ window.setupDataPKKM = function() {
         var promises = [];
         aspekList.forEach(function(asp) { promises.push(db.collection('pkkm_aspek').doc('aspek_' + asp.kode).set(asp)); });
         
-        var timA = ['Nur Asia S.Pd', 'Eka Sasmita S.Sos', 'Fahrir S.Pd', 'Haerunnisa S.Pd M.Pd', 'Khusnul Inayah S.Pd', 'Erwin S.Pd', 'Panji S.Pd', 'Nur Faida Ulfa S.Kom'];
-        var timB = ['Wahyuni S.Pd', 'Nur Syamsi S.Pd', 'Andi Irnawanti Nursak S.Pd', 'Nur Hikmah S.Pd', 'Halijah S.Pd', 'Marwati S.Pd M.Pd', 'Lukman SE'];
-        var timC = ['Kasmidar S.Pd', 'Lisa Aswirayanti SE', 'Nur Syamsi S.Hum', 'Fajrul Ikhsan Alimuddin S.Pd'];
-        var timD = ['Nur Syamsi S.Pd.I', 'St. Muawwafah S.Pd', 'St. Syamsiah S.Ag', 'Nurul Faiqah Jamal S.Pd'];
+        var timA = ['Drs.Lukman', 'Faisyah, S.Ag', 'Marjuni S.Pd.I', 'Fahrir S.Pd', 'Haerunnisa S.Pd M.Pd', 'Khusnul Inayah S.Pd', 'Egi Dewiyanti S.Pd', 'Hj. Muhaeminah S.Pd'];
+        var timB = ['Wahyuni, S.Pd', 'Kasmirah S.Pd.I', 'Nurul Afdhaliah S.Pd', 'Andi Irmawanti Nursak S.Pd M.Pd', 'Andi Irnawanti Nursak S.Pd', 'Nurysamsi, S.Pd.I'];
+        var timC = ['Kasmidar S.Pd', 'Lisa Aswirayanti, SE', 'Nur Syamsi S.Hum'];
+        var timD = ['Dessy Anggriany, SE', 'Reski Ameliah, S.Pd', 'St. Muawwafah'];
 
         var indikatorList = [
             { aspek_id: 'aspek_A', kode: 'A.1.1.1', pertanyaan: 'Mampu mengembangkan struktur organisasi yang sesuai dengan kebutuhan program.', bukti_list: [{ id: 'A.1.1.1.1', nama: 'Bagan/struktur organisasi' }, { id: 'A.1.1.1.2', nama: 'Notulen rapat keputusan tentang penyusunan struktur organisasi' }, { id: 'A.1.1.1.3', nama: 'Dokumen sosialisasi' }, { id: 'A.1.1.1.4', nama: 'Daftar hadir' }], penugasan: timA },
@@ -858,7 +858,7 @@ window.setupDataPKKM = function() {
         Promise.all(promises).then(function() {
             var totalSubBukti = 0;
             indikatorList.forEach(function(ind) { totalSubBukti += (ind.bukti_list ? ind.bukti_list.length : 0); });
-            alert('✅ Setup Data Berhasil!\n\nMTsAs\'adiyah Ereng-Ereng\nTotal Indikator: ' + indikatorList.length + '\nTotal Sub-Bukti: ' + totalSubBukti + '\n\nPeriode PKKM: ' + currentTahun + '\n\nSilakan refresh halaman.');
+            alert('✅ Setup Data Berhasil!\n\nMTs As\'adiyah Ereng-Ereng\nTotal Indikator: ' + indikatorList.length + '\nTotal Sub-Bukti: ' + totalSubBukti + '\n\nPeriode PKKM: ' + currentTahun + '\n\nSilakan refresh halaman.');
             location.reload();
         }).catch(function(error) {
             alert(' Gagal: ' + error.message);
