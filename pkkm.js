@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// PKKM DIGITAL - MA. AS'ADIYAH ERENG-ERENG
+// PKKM DIGITAL - MTsAS'ADIYAH ERENG-ERENG
 // TAHUN AJARAN 2026/2027
 // ══════════════════════════════════════════════
 
@@ -723,7 +723,7 @@ window.saveAssignment = function(indikatorId, btn) {
 };
 
 window.setupDataPKKM = function() {
-    if (!checkAdminAccess() || !confirm('⚠️ PERINGATAN: Semua data lama akan DIHAPUS dan diganti dengan data sesuai SK MA. As\'adiyah Ereng-Ereng.\n\nLanjutkan?')) return;
+    if (!checkAdminAccess() || !confirm('⚠️ PERINGATAN: Semua data lama akan DIHAPUS dan diganti dengan data sesuai SK MTsAs\'adiyah Ereng-Ereng.\n\nLanjutkan?')) return;
     
     var deletePromises = [];
     deletePromises.push(db.collection('pkkm_aspek').get().then(function(snapshot) {
@@ -858,7 +858,7 @@ window.setupDataPKKM = function() {
         Promise.all(promises).then(function() {
             var totalSubBukti = 0;
             indikatorList.forEach(function(ind) { totalSubBukti += (ind.bukti_list ? ind.bukti_list.length : 0); });
-            alert('✅ Setup Data Berhasil!\n\nMA. As\'adiyah Ereng-Ereng\nTotal Indikator: ' + indikatorList.length + '\nTotal Sub-Bukti: ' + totalSubBukti + '\n\nPeriode PKKM: ' + currentTahun + '\n\nSilakan refresh halaman.');
+            alert('✅ Setup Data Berhasil!\n\nMTsAs\'adiyah Ereng-Ereng\nTotal Indikator: ' + indikatorList.length + '\nTotal Sub-Bukti: ' + totalSubBukti + '\n\nPeriode PKKM: ' + currentTahun + '\n\nSilakan refresh halaman.');
             location.reload();
         }).catch(function(error) {
             alert(' Gagal: ' + error.message);
