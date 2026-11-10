@@ -750,7 +750,7 @@ window.setupDataPKKM = function() {
         var timA = ['Drs.Lukman', 'Faisyah, S.Ag', 'Marjuni S.Pd.I', 'Fahrir S.Pd', 'Haerunnisa S.Pd M.Pd', 'Khusnul Inayah S.Pd', 'Egi Dewiyanti S.Pd', 'Hj. Muhaeminah S.Pd'];
         var timB = ['Wahyuni, S.Pd', 'Kasmirah S.Pd.I', 'Nurul Afdhaliah S.Pd', 'Andi Irmawanti Nursak S.Pd M.Pd', 'Andi Irnawanti Nursak S.Pd', 'Nurysamsi, S.Pd.I'];
         var timC = ['Kasmidar S.Pd', 'Lisa Aswirayanti, SE', 'Nur Syamsi S.Hum'];
-        var timD = ['Dessy Anggriany, SE', 'Reski Ameliah, S.Pd', 'St. Muawwafah'];
+        var timD = ['Dessy Anggriany, SE', 'Reski Ameliah, S.Pd', 'St. Muawwafah, S.Pd'];
 
         var indikatorList = [
             { aspek_id: 'aspek_A', kode: 'A.1.1.1', pertanyaan: 'Mampu mengembangkan struktur organisasi yang sesuai dengan kebutuhan program.', bukti_list: [{ id: 'A.1.1.1.1', nama: 'Bagan/struktur organisasi' }, { id: 'A.1.1.1.2', nama: 'Notulen rapat keputusan tentang penyusunan struktur organisasi' }, { id: 'A.1.1.1.3', nama: 'Dokumen sosialisasi' }, { id: 'A.1.1.1.4', nama: 'Daftar hadir' }], penugasan: timA },
