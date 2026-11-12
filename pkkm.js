@@ -255,43 +255,6 @@ function renderDashboard() {
     
     container.innerHTML = html;
 }
-    
-    // Perbarui width menjadi 95px dan tambahkan white-space: nowrap;
-    html += '<button onclick="previewFile(\'' + lastUpload.id + '\')" style="background: #6366f1; color: white; padding: 5px 10px; border-radius: 5px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; width: 95px; white-space: nowrap;"><i class="fas fa-eye"></i> Preview</button>';
-    html += '<button onclick="downloadFile(\'' + lastUpload.id + '\')" style="background: #10b981; color: white; padding: 5px 10px; border-radius: 5px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; width: 95px; white-space: nowrap;"><i class="fas fa-download"></i> Download</button>';
-}
-
-if (userData) {
-    if (isAssigned) {
-        var safeIndId = ind.id.replace(/'/g, "\\'");
-        var safeKode = ind.kode.replace(/'/g, "\\'");
-        var safeBuktiId = bukti.id.replace(/'/g, "\\'");
-        var safeBuktiNama = bukti.nama.replace(/'/g, "\\'");
-        var safePertanyaan = ind.pertanyaan.replace(/'/g, "\\'");
-        var uploadIcon = (hasUpload && isMyUpload) ? 'sync-alt' : 'upload';
-        var uploadText = (hasUpload && isMyUpload) ? 'Ganti' : 'Upload';
-        
-        html += '<button onclick="openUploadModal(\'' + safeIndId + '\', \'' + safeKode + '\', \'' + safeBuktiId + '\', \'' + safeBuktiNama + '\', \'' + safePertanyaan + '\')" style="background: #0891b2; color: white; padding: 5px 10px; border-radius: 5px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; width: 95px; white-space: nowrap;"><i class="fas fa-' + uploadIcon + '"></i> ' + uploadText + '</button>';
-        
-        if (hasUpload) {
-            html += '<button onclick="deleteUpload(\'' + lastUpload.id + '\')" style="background: #ef4444; color: white; padding: 5px 10px; border-radius: 5px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; width: 95px; white-space: nowrap;"><i class="fas fa-trash"></i> Hapus</button>';
-        }
-    } else {
-        html += '<button disabled style="background: #e2e8f0; color: #94a3b8; padding: 5px 10px; border-radius: 5px; border: none; font-size: 0.8rem; width: 95px; white-space: nowrap; cursor: not-allowed;"><i class="fas fa-lock"></i> Kunci</button>';
-    }
-}
-                
-                html += '</div></div>';
-            });
-
-            html += '</div></div>';
-        });
-
-        html += '</div></div>';
-    });
-    
-    container.innerHTML = html;
-}
 
 window.previewFile = function(uploadId) {
     var uploadData = uploadCache[uploadId];
